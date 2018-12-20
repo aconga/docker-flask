@@ -11,5 +11,10 @@ steps {
 sh "docker build -t flask-docker ."
 }
 }
+stage("Deploy") {
+steps {
+sh "docker run -p 4000:80 flask-docker"
+}
+}
 }
 }
