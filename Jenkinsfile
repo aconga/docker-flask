@@ -8,12 +8,12 @@ echo 'Checkout'
 }
 stage("Docker build") {
 steps {
-sh "docker build -t flask-docker ."
+echo "Stage Build"
 }
 }
 stage("Deploy") {
 steps {
-sh "docker run -p 4000:80 flask-docker"
+sh "docker run -d -p 4000:80 flask-docker"
 }
 }
 }
